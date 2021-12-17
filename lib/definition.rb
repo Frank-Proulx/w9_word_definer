@@ -21,4 +21,10 @@ class Definition
   def save
     @@definitions[self.id] = Definition.new({:definition => self.definition, :word_id => self.word_id, :id => self.id})
   end
+
+  def self.clear
+    @@definitions = {}
+    @@total_rows = 0
+  end
+  
 end
