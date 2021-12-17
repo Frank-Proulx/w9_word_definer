@@ -3,6 +3,10 @@ require 'word'
 require 'pry'
 
 describe('Word') do
+
+  before(:each) do
+    Word.clear
+  end
   
   describe('.all') do
     it('returns an empty array when there are no words') do
@@ -25,6 +29,17 @@ describe('Word') do
       word1 = Word.new({:word => "cats", :id => nil})
       word2 = Word.new({:word => "cats", :id => nil})
       expect(word1).to(eq(word2))
+    end
+  end
+
+  describe('.clear') do
+    it('will clear the class variables "@@words" and "@@total_rows" to clear all words') do
+      word1 = Word.new({:word => "cats", :id => nil})
+      word1.save
+      word2 = Word.new({:word => "dogs", :id => nil})
+      word2.save
+      Word.clear
+      expect(Word.all).to(eq([]))
     end
   end
 
