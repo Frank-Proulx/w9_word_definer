@@ -6,6 +6,8 @@ require 'pry'
 describe('Definition') do
 
   before(:each) do
+    Word.clear
+    Definition.clear
     @word = Word.new({:word => "cats", :id => nil})
   end
   
@@ -63,5 +65,14 @@ describe('Definition') do
     end
   end
 
-
+  describe('#delete') do
+    it("deletes an definition by id") do
+      definition1 = Definition.new({:definition => "definition of a word", :word_id => @word.id, :id => nil})
+      definition1.save
+      definition2 = Definition.new({:definition => "definition of a different word", :word_id => @word.id, :id => nil})
+      definition2.save
+      definition1.delete
+      expect(Definition.all).to(eq([definition2]))
+    end
+  end
 end

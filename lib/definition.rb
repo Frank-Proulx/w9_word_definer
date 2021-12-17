@@ -36,4 +36,8 @@ class Definition
     self.word_id = word_id
     @@definitions[self.id] = Definition.new({:definition => self.definition, :word_id => self.word_id, :id => self.id})
   end
+
+  def delete
+    @@definitions.delete(self.id)
+  end
 end
