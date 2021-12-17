@@ -41,3 +41,18 @@ describe('update a definition for a word', {:type => :feature}) do
     expect(page).to have_content('a tabby')
   end
 end
+
+describe('delete a definition for a word', {:type => :feature}) do
+  it('deletes a definition for a word and then returns to the page for that word') do
+    visit('/words')
+    click_on('Add a new word')
+    fill_in('word', :with => 'dewy')
+    click_on('Go!')
+    click_on('dewy')
+    fill_in('definition', :with => 'a big cat')
+    click_on('Add definition!')
+    click_on('a big cat')
+    click_on('Delete definition')
+    expect(page).to have_no_content('a big cat')
+  end
+end
