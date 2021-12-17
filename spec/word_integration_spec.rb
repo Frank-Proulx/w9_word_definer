@@ -71,3 +71,15 @@ describe('update a word', {:type => :feature}) do
   end
 end
 
+describe('delete a word', {:type => :feature}) do
+  it('deletes a word and redirects to the list of words') do
+    visit('/words')
+    click_on('Add a new word')
+    fill_in('word', :with => 'steak')
+    click_on('Go!')
+    click_on('steak')
+    click_on('Edit word')
+    click_on('Delete word')
+    expect(page).to have_no_content('steak')
+  end
+end
