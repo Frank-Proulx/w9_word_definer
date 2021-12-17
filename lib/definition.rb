@@ -13,4 +13,8 @@ class Definition
   def self.all
     @@definitions.values
   end
+
+  def ==(definition_to_compare)
+    (self.definition == definition_to_compare.definition) && (self.word_id == definition_to_compare.word_id)
+  end
 end

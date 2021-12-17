@@ -12,3 +12,4 @@ describe('create an word path', {:type => :feature}) do
     expect(page).to have_content('interesting')
   end
 end
+
