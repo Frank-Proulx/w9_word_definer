@@ -1,9 +1,6 @@
 <h2>Word Showcase</h2>
-
-<h4><%= @word.word %></h4>
-
-<h3>Word Definitions</h3>
-
+<h3><%= @word.word %></h3>
+<h4>Word Definitions</h4>
 <% if @word.definitions %>
   <ul>
     <% @word.definitions.each do |definition| %>
@@ -13,9 +10,7 @@
 <% else %>
   <p>There are no definitions for this word yet!</p>
 <% end %>
-
 <h4>Add a definition:</h4>
-
 <form action="/words/<%= @word.id %>/definitions" method="post">
 <div class="form-group">
   <label for="definition">How would you define this word?</label>
@@ -23,6 +18,5 @@
 </div>
 <button type="submit" class="btn btn-primary">Add definition!</button>
 </form>
-  
-  <p><a href="/words/<%= @word.id %>/edit">Edit word</a></p>
-  <a href="/words">Return to word list</a>
+<p><a href="/words/<%= @word.id %>/edit">Edit word</a></p>
+<a href="/words">Return to word list</a>

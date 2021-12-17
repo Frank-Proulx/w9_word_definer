@@ -1,14 +1,12 @@
 <h1>The Magical Word Garden</h1>
-
-<h3>Our Words</h3>
-    <% if @words.any? %>
-      <ul>
-        <% @words.each do |word| %>
-          <li><a href="/words/<%= word.id %>"><%= word.word %></a></li>
-        <% end %>
-      </ul>
-    <% else %>
-      <p>Time to add some words!</p>
+<% if @words.any? %>
+  <h3>Our Words</h3>
+  <ul>
+    <% @words.each do |word| %>
+      <li><a href="/words/<%= word.id %>"><%= word.word %></a></li>
     <% end %>
-
-    <a href="/words/new">Add a new word</a>
+  </ul>
+<% else %>
+  <p>Time to add some words!</p>
+<% end %>
+<a href="/words/new">Add a new word</a>
