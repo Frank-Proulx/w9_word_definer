@@ -57,3 +57,20 @@ delete('/words/:id/definitions/:definition_id') do
   @definition.delete
   erb(:word)
 end
+
+get('/words/:id/edit') do
+  @word = Word.find(params[:id].to_i())
+  erb(:edit_word)
+end
+
+patch('/words/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.update(params[:word])
+  redirect to('/words')
+end
+
+delete('/words/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.delete
+  redirect to('/words')
+end

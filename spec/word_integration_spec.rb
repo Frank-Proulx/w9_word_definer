@@ -56,3 +56,18 @@ describe('delete a definition for a word', {:type => :feature}) do
     expect(page).to have_no_content('a big cat')
   end
 end
+
+describe('update a word', {:type => :feature}) do
+  it('updates a word and redirects to the list of words') do
+    visit('/words')
+    click_on('Add a new word')
+    fill_in('word', :with => 'house')
+    click_on('Go!')
+    click_on('house')
+    click_on('Edit word')
+    fill_in('word', :with => 'apartment')
+    click_on('Update')
+    expect(page).to have_content('apartment')
+  end
+end
+
