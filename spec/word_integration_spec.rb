@@ -25,3 +25,19 @@ describe('create a definition for a word', {:type => :feature}) do
     expect(page).to have_content('very cool')
   end
 end
+
+describe('update a definition for a word', {:type => :feature}) do
+  it('updates a definition for a word which then displays on the page for that definition') do
+    visit('/words')
+    click_on('Add a new word')
+    fill_in('word', :with => 'mouse')
+    click_on('Go!')
+    click_on('mouse')
+    fill_in('definition', :with => 'a teacup')
+    click_on('Add definition!')
+    click_on('a teacup')
+    fill_in('definition', :with => 'a tabby')
+    click_on('Update definition')
+    expect(page).to have_content('a tabby')
+  end
+end
