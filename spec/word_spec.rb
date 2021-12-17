@@ -14,12 +14,18 @@ describe('Word') do
     it('saves a word into the @@words hash') do
       word1 = Word.new({:word => "cats", :id => nil})
       word1.save
-      word2 = Word.new({:word => "cats", :id => nil})
+      word2 = Word.new({:word => "dogs", :id => nil})
       word2.save
-      expect(Word.all.to(eq([word1, word2])))
+      expect(Word.all).to(eq([word1, word2]))
     end
   end
 
+  describe('#==') do
+    it("is the same word if it has the same attributes as another word") do
+      word1 = Word.new({:word => "cats", :id => nil})
+      word2 = Word.new({:word => "cats", :id => nil})
+      expect(word1).to(eq(word2))
+    end
+  end
 
-  
 end
