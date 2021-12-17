@@ -73,4 +73,15 @@ describe('Word') do
     end
   end
 
+  describe('#definitions') do
+    it("returns a word's definitions") do
+      word1 = Word.new({:word => "cats", :id => nil})
+      word1.save
+      definition1 = Definition.new({:definition => "definition of a word", :word_id => word1.id, :id => nil})
+      definition1.save
+      definition2 = Definition.new({:definition => "definition of a different word", :word_id => word1.id, :id => nil})
+      definition2.save
+      expect(word1.definitions).to(eq([definition1, definition2]))
+    end
+  end
 end

@@ -75,4 +75,16 @@ describe('Definition') do
       expect(Definition.all).to(eq([definition2]))
     end
   end
+
+  describe('.find_by_word') do
+    it("finds definitions for a word") do
+      word1 = Word.new({:word => "cats", :id => nil})
+      word1.save
+      definition1 = Definition.new({:definition => "definition of a word", :word_id => word1.id, :id => nil})
+      definition1.save
+      definition2 = Definition.new({:definition => "definition of a different word", :word_id => word1.id, :id => nil})
+      definition2.save
+      expect(Definition.find_by_word(word1.id)).to(eq([definition1, definition2]))
+    end
+  end
 end

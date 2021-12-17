@@ -10,7 +10,8 @@
 * Gems
 * Rspec
 * Bundler
-* Dictionary_lookup
+* Sinatra
+* Capybara
 
 ## Description
 
