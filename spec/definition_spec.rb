@@ -22,4 +22,14 @@ describe('Definition') do
       expect(definition1).to(eq(definition2))
     end
   end
+
+  describe('#save') do
+    it('saves a definition into the @@definitions hash') do
+      definition1 = Definition.new({:word => "cats", :word_id => @word.id, :id => nil})
+      definition1.save
+      definition2 = Definition.new({:word => "dogs", :word_id => @word.id, :id => nil})
+      definition2.save
+      expect(Definition.all).to(eq([definition1, definition2]))
+    end
+  end
 end

@@ -17,4 +17,8 @@ class Definition
   def ==(definition_to_compare)
     (self.definition == definition_to_compare.definition) && (self.word_id == definition_to_compare.word_id)
   end
+
+  def save
+    @@definitions[self.id] = Definition.new({:definition => self.definition, :word_id => self.word_id, :id => self.id})
+  end
 end
