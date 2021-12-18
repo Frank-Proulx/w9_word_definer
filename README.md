@@ -16,7 +16,7 @@
 
 ## Description
 
-This app allows the user to input words, which are listed on the main page. They can click on each word to update or delete it. They can also add multiple definitions to each word. This project is meant to serve as a learning site for children, where they are able to enter various words and then contribute definitions to each. The definitions can also be updated or deleted, and the user can enter as many words and definitions for each word as they like.
+This app allows the user to input words, which are listed on the main page. They can click on each word to update or delete it. They can also add multiple definitions to each word. This project is meant to serve as a learning site for children, where they are able to enter various words and then contribute definitions to each. The definitions can also be updated or deleted, and the user can enter as many words and definitions for each word as they like.  
 
 ## Setup/Installation Requirements
 
@@ -37,6 +37,6 @@ No known bugs.
 
 [MIT](https://opensource.org/licenses/MIT)
 
-If you have any issues, questions, ideas or concerns, please reach out to me at my email and/or make a contribution to the code via GitHub.
+If you have any issues, questions, ideas or concerns, please reach out to me at my email and/or make a contribution to the code via GitHub.  
 
 Copyright (c) 2021 Frank Proulx
